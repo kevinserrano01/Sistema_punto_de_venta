@@ -1,7 +1,7 @@
 @extends ('layouts.admin')
 @section ('contenido')
 <!-- Content Header (Page header) -->
-{{-- <div class="content-header">
+<div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -15,11 +15,10 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
-</div> --}}
+</div>
 <!-- /.content-header -->
-<h3>INDEX</h3>
 <!-- Hoverable rows start -->
-{{-- <section class="section">
+<section class="section">
     <div class="row" id="table-hover-row">
         <div class="col-12">
             <div class="card">
@@ -31,7 +30,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="input-group mb-6">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                                        <input type="text" class="form-control" name="texto" placeholder="Buscar categorías" value="{{$texto}}" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <input type="text" class="form-control" name="texto" placeholder="Buscar categorías" value="{{$searchText}}" aria-label="Recipient's username" aria-describedby="button-addon2">
                                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
                                     </div>
                                 </div>
@@ -76,13 +75,13 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $categoria->links() }}
+                        {{ $categoria->links() }} <!-- Paginar nuestros registros de 7 en 7 -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 <!-- Hoverable rows end -->
 
 @endsection

@@ -13,16 +13,20 @@ class CategoriaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // if ($request) {
-        //     $query = trim($request->get('searchText'));
-        //     $categorias = DB::table('categoria')->where('categoria', 'LIKE', '%'.$query.'%')->when('estatus', '=', '1')->orderBy('id_categoria', 'desc')->paginate(7);
+        // Categorias de Alta
+        if ($request) {
+            $query = trim($request->get('searchText')); // Busqueda reciente
+            // $categorias = Categoria::all(); // Traer todas las categorias
+            $categorias = DB::table('categoria') // Categorias solo dadas de Alta
+            ->where('categoria', 'LIKE', '%'.$query.'%')
+            ->where('estatus', '=', '1')
+            ->orderBy('id_categoria', 'desc')
+            ->paginate(7);
 
-        //     return view('almacen.categoria.index', ['categoria'=>$categorias, 'searchTect'=>$query]);
-        // }
-        // $categorias = Categoria::all();
-        return view('almacen.categoria.index');
+            return view('almacen.categoria.index', ['categoria'=>$categorias, 'searchText'=>$query]);
+        }
     }
 
     /**
