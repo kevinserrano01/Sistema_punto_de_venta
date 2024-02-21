@@ -89,6 +89,7 @@ class CategoriaController extends Controller
         $categoria->estatus = '0';
         $categoria->update();
 
-        return Redirect::to('almacen/categoria');
+        // return Redirect::to('almacen/categoria');
+        return redirect()->route('categoria.index')->with('success', __('Category deleted successfully!'));
     }
 }

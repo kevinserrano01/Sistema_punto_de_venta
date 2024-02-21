@@ -214,5 +214,6 @@
     "Name": "Nombre",
     "Description": "Descripcion",
     "Add category name": "Agregar nombre de la Categoria",
-    "Add Description": "Agregar Descripcion"
+    "Add Description": "Agregar Descripcion",
+    "Delete Category": "Eliminar Categoria"
 }
