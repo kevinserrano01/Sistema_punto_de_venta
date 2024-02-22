@@ -74,7 +74,7 @@
                                     <td>{{ $prod->nombre}}</td>
                                     <td>{{ $prod->stock}}</td>
                                     <td>{{ $prod->descripcion}}</td>
-                                    <td>{{ $prod->imagen}}</td>
+                                    <td><img src="{{ asset('images/productos/'.$prod->imagen) }}" alt="{{ $prod->nombre }}" height="70px" width="70px" class="img-thumbnail"></td>
                                     <td>{{ $prod->estatus}}</td>
 
                                 </tr>

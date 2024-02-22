@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class ProductoController extends Controller
 {
@@ -30,19 +34,36 @@ class ProductoController extends Controller
 
     public function create()
     {
-        return view('almacen.categoria.create');
+        // Obtener todas las categorías con estatus igual a 1
+        $categorias = Categoria::where('estatus', 1)->get();
+        // $categorias = DB::table('categoria')->where('estatus', '=', '1')->get(); // Traer solo Categorias dadas de Alta.
+        return view('almacen.producto.create', compact('categorias'));
     }
 
 
     public function store(Request $request)
     {
-        // $categoria = new Categoria;
-        // $categoria->categoria = $request->get('categoria');
-        // $categoria->descripcion = $request->get('descripcion');
-        // $categoria->estatus = '1';
-        // $categoria->save();
+        $producto = new Producto();
+        $producto->id_categoria = $request->input('id_categoria');
+        $producto->codigo = $request->input('codigo');
+        $producto->nombre = $request->input('nombre');
+        $producto->stock = $request->input('stock');;
+        $producto->descripcion = $request->input('descripcion');;
+        $producto->estatus = 'Activo';
+        // Script para subir la imagen
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $nombreImagen = Str::slug($request->nombre).".".$imagen->guessExtension();
+            $ruta = public_path('/images/productos/');
 
-        // return Redirect::to('almacen/categoria');
+            copy($imagen->getRealPath(), $ruta.$nombreImagen);
+
+            $producto->imagen = $nombreImagen;
+        }
+
+        $producto->save();
+
+        return redirect()->route('producto.index');
     }
 
 
@@ -54,7 +75,6 @@ class ProductoController extends Controller
 
     public function edit($id)
     {
-        return "Hola Edit Producto";
         // return view('almacen.categoria.edit', ['categoria'=>Categoria::findOrFail($id)]);
     }
 
