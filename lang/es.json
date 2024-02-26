@@ -225,5 +225,6 @@
     "Add product name": "Agregar nombre de producto",
     "Add product code": "Agregar codigo de producto",
     "Add product description": "Agregar descripcion del producto",
-    "Add Stock": "Agregar Stock"
+    "Add Stock": "Agregar Stock",
+    "Delete Product": "Eliminar Producto"
 }

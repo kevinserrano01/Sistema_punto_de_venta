@@ -68,7 +68,7 @@
                                     <td>
                                         <a href="{{ route('producto.edit', $prod->id_productos) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
                                         <!-- Button trigger for danger theme modal -->
-                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#"><i class="fas fa-trash-alt"></i></button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modal-delete-{{$prod->id_productos}}"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                     <td>{{ $prod->codigo}}</td>
                                     <td>{{ $prod->nombre}}</td>
@@ -78,7 +78,7 @@
                                     <td>{{ $prod->estatus}}</td>
 
                                 </tr>
-                                {{-- @include('producto.producto.modal') --}}
+                                @include('almacen.producto.modal')
                                 @endforeach
                             </tbody>
                         </table>

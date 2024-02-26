@@ -103,11 +103,10 @@ class ProductoController extends Controller
 
     public function destroy($id)
     {
-        // $categoria = Categoria::findOrFail($id);
-        // $categoria->estatus = '0';
-        // $categoria->update();
+        $producto = Producto::findOrFail($id);
+        $producto->estatus = 'Inactivo';
+        $producto->update();
 
-        // // return Redirect::to('almacen/categoria');
-        // return redirect()->route('categoria.index')->with('success', __('Category deleted successfully!'));
+        return redirect()->route('producto.index')->with('success', __('Produc deleted successfully!'));
     }
 }

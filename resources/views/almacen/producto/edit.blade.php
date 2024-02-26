@@ -47,7 +47,7 @@
                 <div class="col-md-6 col-12">
                     <div class="form-group">
                         <label for="descripcion">{{ __('Description') }}</label>
-                        <input type="text" class="form-control" name="descripcion" value="{{ $producto->descripcion }} id="descripcion" placeholder="{{ __('Add product description') }}">
+                        <input type="text" class="form-control" name="descripcion" value="{{ $producto->descripcion }}" id="descripcion" placeholder="{{ __('Add product description') }}">
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
