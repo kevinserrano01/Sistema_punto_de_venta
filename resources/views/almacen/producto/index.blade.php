@@ -66,7 +66,7 @@
                                 @foreach ($productos as $prod)
                                 <tr>
                                     <td>
-                                        <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
+                                        <a href="{{ route('producto.edit', $prod->id_productos) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
                                         <!-- Button trigger for danger theme modal -->
                                         <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#"><i class="fas fa-trash-alt"></i></button>
                                     </td>

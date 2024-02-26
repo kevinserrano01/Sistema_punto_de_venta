@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductoFormRequest;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
@@ -60,9 +61,7 @@ class ProductoController extends Controller
 
             $producto->imagen = $nombreImagen;
         }
-
         $producto->save();
-
         return redirect()->route('producto.index');
     }
 
@@ -75,18 +74,30 @@ class ProductoController extends Controller
 
     public function edit($id)
     {
-        // return view('almacen.categoria.edit', ['categoria'=>Categoria::findOrFail($id)]);
+        $producto = Producto::findOrFail($id);
+        $categorias = Categoria::where('estatus', 1)->get();
+        return view('almacen.producto.edit', ['producto'=>$producto, 'categorias'=>$categorias]);
     }
 
 
-    public function update($id)
+    public function update(ProductoFormRequest $request, $id)
     {
-        // $categoria = Categoria::findOrFail($id);
-        // $categoria->categoria = $request->get('categoria');
-        // $categoria->descripcion = $request->get('descripcion');
-        // $categoria->update();
-
-        // return Redirect::to('almacen/categoria');
+        $producto = Producto::findOrFail($id);
+        $producto->id_categoria = $request->input('id_categoria');
+        $producto->codigo = $request->input('codigo');
+        $producto->nombre = $request->input('nombre');
+        $producto->stock = $request->input('stock');
+        $producto->descripcion = $request->input('descripcion');
+        // Script para subir la imagen
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $nombreImagen = Str::slug($request->nombre).".".$imagen->guessExtension();
+            $ruta = public_path('/images/productos/');
+            copy($imagen->getRealPath(), $ruta.$nombreImagen);
+            $producto->imagen = $nombreImagen;
+        }
+        $producto->update();
+        return redirect()->route('producto.index');
     }
 
 

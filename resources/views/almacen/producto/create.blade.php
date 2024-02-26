@@ -41,17 +41,6 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="form-group">
-                            <label for="unidad">{{ __('Unit') }}</label>
-                            <select name="unidad" class="form-control" id="unidad">
-                                <option>Piezas</option>
-                                <option>Kilos</option>
-                                <option>Cajas</option>
-                                <option>Paquetes</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="form-group">
                             <label for="descripcion">{{ __('Description') }}</label>
                             <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="{{ __('Add product description') }}">
                         </div>
