@@ -68,7 +68,7 @@ class ProductoController extends Controller
 
     public function show($id)
     {
-        // return view('almacen.categoria.show', ['categoria'=>Categoria::findOrFail($id)]);
+        return view('almacen.producto.show', ['producto'=>Producto::findOrFail($id)]);
     }
 
 
