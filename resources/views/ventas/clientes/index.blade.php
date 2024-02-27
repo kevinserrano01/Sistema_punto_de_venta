@@ -5,12 +5,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">LISTADO DE CATEGORIAS</h1>
+                <h1 class="m-0">LISTADO DE CLIENTES</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Categorias</li>
+                    <li class="breadcrumb-item active">Clientes</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="col-xl-12">
-                        <form action="{{ route('categoria.index') }}" method="get">
+                        <form action="{{ route('clientes.index') }}" method="get">
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -34,7 +34,7 @@
                                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                                               </svg>
                                         </span>
-                                        <input type="text" class="form-control" name="texto" placeholder="Buscar categorías" value="{{$searchText}}" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <input type="text" class="form-control" name="texto" placeholder="Buscar clientes" value="{{$searchText}}" aria-label="Recipient's username" aria-describedby="button-addon2">
                                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                                               </svg>
                                         </span>
-                                        <a href="{{ route('categoria.create') }}" class="btn btn-success">Nueva</a>
+                                        <a href="{{ route('clientes.create') }}" class="btn btn-success">Nueva</a>
                                     </div>
                                 </div>
                             </div>
@@ -62,29 +62,35 @@
                             <thead>
                                 <tr>
                                     <th>Opciones</th>
-                                    <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Descripción</th>
+                                    <th>Tipo Dcumento</th>
+                                    <th>Numero Documento</th>
+                                    <th>Direccion</th>
+                                    <th>Telefono</th>
+                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categoria as $cat)
+                                @foreach ($clientes as $cli)
                                 <tr>
                                     <td>
-                                        <a href="{{ route('categoria.edit', $cat->id_categoria) }}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
+                                        <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>
                                         <!-- Button trigger for danger theme modal -->
-                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modal-delete-{{$cat->id_categoria}}"><i class="fas fa-trash-alt"></i></button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#"><i class="fas fa-trash-alt"></i></button>
                                     </td>
-                                    <td>{{ $cat->id_categoria}}</td>
-                                    <td>{{ $cat->categoria}}</td>
-                                    <td>{{ $cat->descripcion}}</td>
+                                    <td>{{ $cli->nombre}}</td>
+                                    <td>{{ $cli->tipo_documento}}</td>
+                                    <td>{{ $cli->nro_documento}}</td>
+                                    <td>{{ $cli->direccion}}</td>
+                                    <td>{{ $cli->telefono}}</td>
+                                    <td>{{ $cli->email}}</td>
 
                                 </tr>
-                                @include('almacen.categoria.modal')
+                                {{-- @include('ventas.clientes.modal') --}}
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $categoria->links() }} <!-- Paginar nuestros registros de 7 en 7 -->
+                        {{ $clientes->links() }} <!-- Paginar nuestros registros de 7 en 7 -->
                     </div>
                 </div>
             </div>

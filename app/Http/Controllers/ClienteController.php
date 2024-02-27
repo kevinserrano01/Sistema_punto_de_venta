@@ -13,11 +13,11 @@ class ClienteController extends Controller
     
    public function index(Request $request)
    {
-       // Categorias de Alta
+       // Clientes de Alta
        if ($request) {
            $query = trim($request->get('searchText')); // Busqueda reciente
-           // $categorias = Categoria::all(); // Traer todas las categorias
-           $clientes = DB::table('persona') // Categorias solo dadas de Alta
+           // $clientes = Cliente::all(); // Traer todas los Clientes
+           $clientes = DB::table('persona') // Clientes solo dadas de Alta
            ->where('nombre', 'LIKE', '%'.$query.'%')
            ->where('tipo_persona', '=', 'Cliente')
            ->orderBy('id_persona', 'desc')
