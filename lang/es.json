@@ -237,5 +237,6 @@
     "Phone number": "Telefono",
     "Add phone number": "Agregar numero de telefono",
     "Add email": "Ingresa el correo electrónico",
-    "Edit client": "Editar Cliente"
+    "Edit client": "Editar Cliente",
+    "Delete Client": "Eliminar Cliente"
 }
