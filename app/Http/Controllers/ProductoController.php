@@ -18,17 +18,17 @@ class ProductoController extends Controller
     public function index(Request $request)
     {
         // Productos de Alta
-        $texto = trim($request->get('texto')); // Busqueda reciente
+        $query = trim($request->get('searchText')); // Busqueda reciente
 
         $productos = DB::table('producto as a') // Categorias solo dadas de Alta
         ->join('categoria as c', 'a.id_categoria', '=', 'c.id_categoria')
         ->select('a.id_productos', 'a.nombre', 'a.codigo', 'a.stock', 'c.categoria as categoria', 'a.descripcion', 'a.imagen', 'a.estatus')
-        ->where('a.nombre', 'LIKE', '%'.$texto.'%')
-        ->orwhere('a.codigo', 'LIKE', '%'.$texto.'%')
+        ->where('a.nombre', 'LIKE', '%'.$query.'%')
+        ->orwhere('a.codigo', 'LIKE', '%'.$query.'%')
         ->orderBy('id_productos', 'desc')
         ->paginate(10);
 
-        return view('almacen.producto.index', compact('productos', 'texto'));
+        return view('almacen.producto.index', ['productos'=>$productos, 'searchText'=>$query]);
  
     }
 
