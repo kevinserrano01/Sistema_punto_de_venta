@@ -226,5 +226,15 @@
     "Add product code": "Agregar codigo de producto",
     "Add product description": "Agregar descripcion del producto",
     "Add Stock": "Agregar Stock",
-    "Delete Product": "Eliminar Producto"
+    "Delete Product": "Eliminar Producto",
+    "New client": "Nuevo Cliente",
+    "Add client name": "Agregar nombre de cliente",
+    "Document type": "Tipo de documento",
+    "Document number": "Numero de documento",
+    "Add document number": "Agregar numero de documento",
+    "Address": "Direccion",
+    "Add address": "Agregar direccion",
+    "Phone number": "Telefono",
+    "Add phone number": "Agregar numero de telefono",
+    "Add email": "Ingresa el correo electrónico"
 }

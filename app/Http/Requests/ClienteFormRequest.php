@@ -22,7 +22,6 @@ class ClienteFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tipo_persona'=>'required|max:50',
             'nombre'=>'required|max:50',
             'tipo_documento'=>'max:50',
             'nro_documento'=>'max:50',
