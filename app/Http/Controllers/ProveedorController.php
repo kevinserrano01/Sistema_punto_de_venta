@@ -78,7 +78,7 @@ class ProveedorController extends Controller
      */
     public function update(ProveedorFormRequest $request, $id)
     {
-        $proveedor = new Proveedores();
+        $proveedor = Proveedores::findOrFail($id);
         $proveedor->nombre = $request->input('nombre');
         $proveedor->tipo_documento = $request->input('tipo_documento');
         $proveedor->nro_documento = $request->input('nro_documento');
