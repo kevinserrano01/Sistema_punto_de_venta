@@ -238,5 +238,9 @@
     "Add phone number": "Agregar numero de telefono",
     "Add email": "Ingresa el correo electrónico",
     "Edit client": "Editar Cliente",
-    "Delete Client": "Eliminar Cliente"
+    "Delete Client": "Eliminar Cliente",
+    "Edit supplier": "Editar Proveedor",
+    "Add supplier name": "Agregar nombre de proveedor",
+    "New supplier": "Nuevo Proveedor",
+    "Delete Supplier": "Eliminar Proveedor"
 }
