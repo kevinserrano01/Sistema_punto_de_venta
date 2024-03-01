@@ -160,13 +160,13 @@
               <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Clientes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
+                  <p>Ventas</p>
                 </a>
               </li>
             </ul>
