@@ -25,10 +25,10 @@ class IngresoController extends Controller
 
             $ingresos = DB::table('ingreso as i')
             ->join('persona as p', 'i.id_proveedor', '=', 'id_persona') // relacion tabla ingreso con tabla persona
-            ->join('detalle_ingreso as di', 'di.id_ingreso', '=', 'ingreso.id_ingreso')
+            ->join('detalle_ingreso as di', 'di.id_ingreso', '=', 'i.id_ingreso')
             ->select('i.id_ingreso', 'i.fecha_hora', 'p.nombre', 'i.tipo_comprobante', 'i.nro_comprobante', 'i.impuesto', 'i.estado', DB::raw('sum(di.cantidad*di.precio_compra) as total'))
             ->where('i.nro_comprobante', 'LIKE', '%'.$query.'%')
-            ->groupBy('i.id_ingreso', 'i.fech_hora', 'p.nombre', 'i.tipo_comprobante', 'i.nro_comprobante', 'i.impuesto', 'i.estado')
+            ->groupBy('i.id_ingreso', 'i.fecha_hora', 'p.nombre', 'i.tipo_comprobante', 'i.nro_comprobante', 'i.impuesto', 'i.estado')
             ->orderBy('i.id_ingreso', 'desc')
             ->paginate(15);
 
@@ -109,7 +109,7 @@ class IngresoController extends Controller
             ->first();
 
         $detalles = DB::table('detalle_ingreso as di')
-            ->join('producto as p', 'd.id_productos', '=', 'p.id_productos')
+            ->join('producto as p', 'd.id_producto', '=', 'p.id_producto')
             ->select('a.nombre as producto', 'd.cantidad', 'd.precio_compra', 'd.precio_venta')
             ->where('d.id_ingreso', '=', $id)
             ->get();
