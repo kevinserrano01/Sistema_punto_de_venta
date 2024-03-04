@@ -17,6 +17,7 @@
   <link href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
   <!-- Theme style -->
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
   <!-- overlayScrollbars -->
   <link href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}" rel="stylesheet">
   <!-- Daterange picker -->
@@ -258,6 +259,7 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('dist/js/bootstrap-select.min.js') }}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->

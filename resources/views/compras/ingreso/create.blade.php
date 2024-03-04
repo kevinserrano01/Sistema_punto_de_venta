@@ -38,10 +38,25 @@
                     </div>
                 </div>
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-success me-1 mb-1">{{ __('Save') }}</button>
-                    <button type="reset" class="btn btn-danger me-1 mb-1">{{ __('Cancel') }}</button>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="supplier">{{ __('Products') }}</label>
+                            <select name="id_producto" class="form-control selectpicker" id="id_producto" data-live-search="true">
+                                @foreach ($productos as $producto)
+                                    <option value="{{ $producto->id_productos }}">{{ $producto->Articulo }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success me-1 mb-1">{{ __('Save') }}</button>
+                        <button type="reset" class="btn btn-danger me-1 mb-1">{{ __('Cancel') }}</button>
+                    </div>
                 </div>
+
+                
             </div>
         </form>
     </div>
