@@ -244,5 +244,11 @@
     "New supplier": "Nuevo Proveedor",
     "Delete Supplier": "Eliminar Proveedor",
     "Supplier": "Proveedor",
-    "New Entry":"Nuevo Ingreso"
+    "New Entry":"Nuevo Ingreso",
+    "Quantity": "Cantidad",
+    "Purchase Price": "Precio Compra",
+    "Price Sale": "Precio Venta",
+    "Action": "Accion",
+    "Products": "Productos",
+    "Add quantity": "Agregar cantidad"
 }
