@@ -242,5 +242,7 @@
     "Edit supplier": "Editar Proveedor",
     "Add supplier name": "Agregar nombre de proveedor",
     "New supplier": "Nuevo Proveedor",
-    "Delete Supplier": "Eliminar Proveedor"
+    "Delete Supplier": "Eliminar Proveedor",
+    "Supplier": "Proveedor",
+    "New Entry":"Nuevo Ingreso"
 }

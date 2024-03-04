@@ -44,7 +44,7 @@ class IngresoController extends Controller
         $personas = DB::table('persona')->where('tipo_persona', '=', 'Proveedor')->get();
         $ingreso = Ingreso::all();
         $productos = DB::table('producto as p')
-        ->select(DB::raw('CONCAT(p.codigo, " ", p.nombre) AS Articulo'), 'p.id_productos', 'p.stock', 'p.unidad')
+        ->select(DB::raw('CONCAT(p.codigo, " ", p.nombre) AS Articulo'), 'p.id_productos', 'p.stock')
         ->where('p.estatus', '=', 'Activo')
         ->get();
 
